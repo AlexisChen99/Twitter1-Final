@@ -28,6 +28,12 @@ class HomeTableViewController: UITableViewController {
         myRefreshControl.addTarget(self, action: #selector(loadTweets), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
     }
+    //overrid the viewDidAppear
+    //this is called every time the screen appears while viewDidLoad only get called when the app get loaded
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadTweets()
+    }
 
     // MARK: - Table view data source
     
